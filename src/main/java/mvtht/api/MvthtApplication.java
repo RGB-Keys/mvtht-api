@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MvthtApiApplication {
+public class MvthtApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MvthtApiApplication.class, args);
+		SpringApplication.run(MvthtApplication.class, args);
 	}
 
 }
