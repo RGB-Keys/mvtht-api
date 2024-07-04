@@ -1,18 +1,15 @@
 package mvtht.api.domain.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import mvtht.api.domain.dtos.movie.Classification;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 @Entity
 @Table(name = "movies")
-@EqualsAndHashCode(of = "id")
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
 public class Movie {
 
     @Id
@@ -38,5 +35,4 @@ public class Movie {
 
     @Column(name = "idiom")
     private String idiom;
-
 }
