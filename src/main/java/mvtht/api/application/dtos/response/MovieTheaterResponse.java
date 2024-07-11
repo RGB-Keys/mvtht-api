@@ -1,4 +1,4 @@
-package mvtht.api.domain.dtos.response;
+package mvtht.api.application.dtos.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

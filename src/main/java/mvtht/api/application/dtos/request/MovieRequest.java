@@ -1,9 +1,9 @@
-package mvtht.api.domain.dtos.request;
+package mvtht.api.application.dtos.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import mvtht.api.domain.dtos.movie.Classification;
+import mvtht.api.application.enums.Classification;
 
 @NoArgsConstructor
 @AllArgsConstructor

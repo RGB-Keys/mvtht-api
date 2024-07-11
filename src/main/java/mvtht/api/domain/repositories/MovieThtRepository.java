@@ -1,4 +1,7 @@
 package mvtht.api.domain.repositories;
 
-public interface MovieThtRepository {
+import mvtht.api.domain.models.MovieTheater;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MovieThtRepository extends JpaRepository<MovieTheater, Long> {
 }

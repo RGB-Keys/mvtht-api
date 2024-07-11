@@ -1,4 +1,4 @@
-package mvtht.api.application.mapper;
+package mvtht.api.application.mapper.specific;
 
 import lombok.RequiredArgsConstructor;
 import mvtht.api.application.dtos.request.AddressRequest;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class AddressMapper {
 
     @Autowired

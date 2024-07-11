@@ -2,12 +2,11 @@ package mvtht.api.domain.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import mvtht.api.domain.dtos.movie.Classification;
+import mvtht.api.application.enums.Classification;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-@Builder
 @Entity
 @Table(name = "movies")
 public class Movie {

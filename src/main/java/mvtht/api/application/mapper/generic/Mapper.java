@@ -1,11 +1,11 @@
-package mvtht.api.infra.mapper;
+package mvtht.api.application.mapper.generic;
 
 import java.util.List;
 
 public interface Mapper<T, REQ, UPT, RESP> {
     T toEntity(REQ request);
 
-    public void update(UPT updateDto, T entity);
+    void update(UPT updateDto, T entity);
 
     RESP toResponse(T entity);
 

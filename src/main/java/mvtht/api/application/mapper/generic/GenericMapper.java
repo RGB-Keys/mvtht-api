@@ -1,4 +1,4 @@
-package mvtht.api.infra.mapper;
+package mvtht.api.application.mapper.generic;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,16 +10,15 @@ import java.util.stream.Collectors;
 @Component
 public abstract class GenericMapper<T, REQ, UPT, RESP> implements Mapper<T, REQ, UPT, RESP> {
 
-    @Autowired
-    private ModelMapper mapper;
-
+    private final ModelMapper mapper;
     private final Class<T> entityClass;
     private final Class<RESP> responseClass;
 
     @Autowired
-    public GenericMapper(Class<T> entityClass, Class<RESP> responseClass) {
+    public GenericMapper(Class<T> entityClass, Class<RESP> responseClass, ModelMapper mapper) {
         this.entityClass = entityClass;
         this.responseClass = responseClass;
+        this.mapper = mapper;
     }
 
     @Override

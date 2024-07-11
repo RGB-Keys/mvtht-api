@@ -1,9 +1,9 @@
-package mvtht.api.controllers;
+package mvtht.api.webApi.controllers;
 
 import jakarta.transaction.Transactional;
-import mvtht.api.domain.dtos.request.MovieRequest;
-import mvtht.api.domain.dtos.response.MovieResponse;
-import mvtht.api.domain.dtos.update.MovieUpdate;
+import mvtht.api.application.dtos.request.MovieRequest;
+import mvtht.api.application.dtos.response.MovieResponse;
+import mvtht.api.application.dtos.update.MovieUpdate;
 import mvtht.api.domain.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/movie")
@@ -33,18 +34,20 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MovieResponse> findById(@PathVariable Long id) {
-        var movie = service.findById(id);
+    public ResponseEntity<Optional<MovieResponse>> search(@PathVariable Long id) {
+        var movie = service.search(id);
         return ResponseEntity.status(HttpStatus.OK).body(movie);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<MovieResponse> update(@PathVariable Long id, @RequestBody MovieUpdate request) {
-        var movie = service.update(id, request);
+    @Transactional
+    public ResponseEntity<MovieResponse> update(@PathVariable Long id, @RequestBody MovieUpdate updateRequest) {
+        var movie = service.update(id, updateRequest);
         return ResponseEntity.status(HttpStatus.OK).body(movie);
     }
 
     @DeleteMapping("/{id}")
+    @Transactional
     public ResponseEntity<MovieResponse> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
