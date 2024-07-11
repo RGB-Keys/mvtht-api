@@ -1,11 +1,11 @@
-package mvtht.api.domain.services;
+package mvtht.api.application.services;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import mvtht.api.domain.dtos.request.MovieRequest;
-import mvtht.api.domain.dtos.response.MovieResponse;
-import mvtht.api.domain.dtos.update.MovieUpdate;
-import mvtht.api.domain.mapper.MovieMapper;
+import mvtht.api.application.dtos.request.MovieRequest;
+import mvtht.api.application.dtos.response.MovieResponse;
+import mvtht.api.application.dtos.update.MovieUpdate;
+import mvtht.api.application.mapper.MovieMapper;
 import mvtht.api.domain.models.Movie;
 import mvtht.api.domain.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
