@@ -1,4 +1,4 @@
-package mvtht.api.domain.dtos.movie;
+package mvtht.api.application.enums;
 
 public enum Classification {
 
